@@ -1,0 +1,17 @@
+meta {
+  name: setNetworkName
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setNetworkName
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Yamaha AVR"
+  }
+}

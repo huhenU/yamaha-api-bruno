@@ -1,0 +1,25 @@
+meta {
+  name: setAutoPowerStandby
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setAutoPowerStandby?enable=true
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: true
+}
+
+docs {
+  For setting Auto Power Standby status. Actual operations/reactions of enabling Auto Power
+  Standby depend on each Device
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies Auto Power Standby status
+}

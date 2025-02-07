@@ -1,0 +1,37 @@
+meta {
+  name: setIpSettings
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setIpSettings
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "dhcp": false,
+    "ip_address": "192.168.0.11",
+    "subnet_mask": "255.255.255.0",
+    "default_gateway": "192.168.0.1",
+    "dns_server_1": "192.168.0.1",
+    "dns_server_2": "0.0.0.0"
+  }
+}
+
+docs {
+  For setting IP. This API only set IP as maintain same network connection status (Wired/Wireless Lan/Wireless Direct/Extend).
+  If no parameter is specified, current parameter is used. If set parameter is incomplete, it is possible not to provide network avalability.
+  
+  **Request parameters**
+  | name           | type   | required | description               |
+  |--------------|--------|----------|-----------------------------|
+  | dhcp         | string | no       | Specifies DHCP setting      |
+  | ip_address   | string | no       | Specifies IP Address        |
+  | subnet_mask  | string | no       | Specifies Subnet Mask       |
+  | default_gateway | string | no    | Specifies Default Gateway   |
+  | dns_server_1 | string | no       | Specifies DNS Server 1      |
+  | dns_server_2 | string | no       | Specifies DNS Server 2      |
+}

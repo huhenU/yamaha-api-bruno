@@ -1,0 +1,29 @@
+meta {
+  name: setNameText
+  type: http
+  seq: 31
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setNameText
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "main",
+    "text": "Wohnzimmer"
+  }
+}
+
+docs {
+  For setting text information related to each ID of Zone, Input.
+  
+  **Request Parameters**
+  
+  | name | type | required | description |
+  |------|------|----------|-------------|
+  |id | string | yes |  Specifies ID. Input ID can be specified only when" rename_enable " is true under /system/getFeatures. Sound Program ID can not be specified. Note: If "main" is specified, Network Name is overwritten with same text information to be acceptable both MusicCast CONTROLLER (Yamaha) and Spotify App. If Network Name is changed, "main" text information is not changed.| 
+  | text | string | yes | Specifies text information (UTF-8 within 64 bytes). If "" (empty text) is specified, specifies default text information. | 
+}

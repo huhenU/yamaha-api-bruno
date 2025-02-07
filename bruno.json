@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Yamaha Extended Control API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,24 @@
+meta {
+  name: setZoneBVolumeSync
+  type: http
+  seq: 27
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setZoneBVolumeSync?enable=true
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: true
+}
+
+docs {
+  For setting Zone B volume sync
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies whether or not Zone B volume sync Zone A volume.
+}

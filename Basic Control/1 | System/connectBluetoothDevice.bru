@@ -1,0 +1,21 @@
+meta {
+  name: connectBluetoothDevice
+  type: http
+  seq: 19
+}
+
+get {
+  url: {{BaseURL}}/v1/system/connectBluetoothDevice?address=C259197BD6F5
+  body: none
+  auth: none
+}
+
+params:query {
+  address: C259197BD6F5
+}
+
+docs {
+  For connecting Bluetooth (Sink) device. This API is available only when “bluetooth_tx_setting” is true under /system/getFuncStatus.
+  
+  It is possible to take time to return this API response issued after connection status is fixed.
+}

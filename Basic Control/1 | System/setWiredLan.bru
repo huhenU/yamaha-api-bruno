@@ -1,0 +1,39 @@
+meta {
+  name: setWiredLan
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setWiredLan
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "dhcp": false,
+    "ip_address": "192.168.2.4",
+    "subnet_mask": "255.255.255.0",
+    "default_gateway": "192.168.2.1",
+    "dns_server_1": "192.168.0.1",
+    "dns_server_2": "0.0.0.0"
+  }
+}
+
+docs {
+  For setting Wired Network. Network connection is switched to wired by using this API.
+  If no parameter is specified, current parameter is used. If set parameter is incomplete, it is possible not to provide network avalability.
+  
+  **Request parameters**
+  
+  | name           | type   | required | description               |
+  |--------------|--------|----------|-----------------------------|
+  | dhcp         | string | no       | Specifies DHCP setting      |
+  | ip_address   | string | no       | Specifies IP Address        |
+  | subnet_mask  | string | no       | Specifies Subnet Mask       |
+  | default_gateway | string | no    | Specifies Default Gateway   |
+  | dns_server_1 | string | no       | Specifies DNS Server 1      |
+  | dns_server_2 | string | no       | Specifies DNS Server 2      |
+  
+}

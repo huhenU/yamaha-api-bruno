@@ -1,0 +1,30 @@
+meta {
+  name: setWirelessDirect
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setWirelessDirect
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "type": "wpa2-psk(aes)",
+    "key": "abadcafe"
+  }
+}
+
+docs {
+  For setting Wireless Network (Wireless Direct). Network connection is switched to wireless (Wireless Direct) by using this API.
+  If no parameter is specified, current parameter is used. If set parameter is incomplete, it is possible not to provide network avalability.
+  
+  **Request parameters**
+  | name  | type   | required | description                                                                 |
+  |-------|--------|----------|-----------------------------------------------------------------------------|
+  | type  | string | no       | Specifies wireless encryption protocol. Values: "none" / "wpa2-psk(aes)" |
+  | key   | string | no       | Specifies encryption key (printable ASCII (0x20-0x7E) within 64 characters). This value is invalid when type "none" is specified. |
+  
+}

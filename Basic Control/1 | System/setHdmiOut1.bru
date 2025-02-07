@@ -1,0 +1,24 @@
+meta {
+  name: setHdmiOut1
+  type: http
+  seq: 28
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setHdmiOut1?enable=true
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: true
+}
+
+docs {
+  For setting HDMI OUT 1 terminal output status
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies HDMI OUT 1 terminal output status
+}

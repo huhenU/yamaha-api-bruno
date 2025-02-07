@@ -1,0 +1,25 @@
+meta {
+  name: setNetworkStandby
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setNetworkStandby?standby=on
+  body: none
+  auth: none
+}
+
+params:query {
+  standby: on
+}
+
+docs {
+  For setting Network Standby
+  
+  **Request Parameters**
+  
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | standby| string | yes | Specifies setup of Network Standby. "auto" is available only when "network_standby_auto" exists in system - func_list under /system/getFeatures. Values: "off" / "on" / "auto"
+}

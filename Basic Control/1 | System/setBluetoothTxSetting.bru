@@ -1,0 +1,25 @@
+meta {
+  name: setBluetoothTxSetting
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setBluetoothTxSetting?enable=false
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: false
+}
+
+docs {
+  For setting Bluetooth transmission
+  
+  **Request Parameters**
+  
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies Bluetooth transmission setting
+}

@@ -1,0 +1,25 @@
+meta {
+  name: setBluetoothStandby
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setBluetoothStandby?enable=true
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: true
+}
+
+docs {
+  For setting Bluetooth Standby
+  
+  **Request Parameters**
+  
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies Bluetooth standby setting
+}

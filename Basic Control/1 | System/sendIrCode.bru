@@ -1,0 +1,25 @@
+meta {
+  name: sendIrCode
+  type: http
+  seq: 33
+}
+
+get {
+  url: {{BaseURL}}/v1/system/sendIrCode?code=7F016C13
+  body: none
+  auth: none
+}
+
+params:query {
+  code: 7F016C13
+}
+
+docs {
+  For sending specific remote IR code. A Device is operated same as remote IR code reception. But continuous IR code cannot be used in this command. Refer to each Device’s IR code list for details
+  
+  **Request Parameters**
+  
+  | name | type | required | description |
+  |------|------|----------|-------------|
+  |code | string | yes | Specifies IR code in 8-digit hex| 
+}

@@ -1,0 +1,24 @@
+meta {
+  name: setSpeakerA
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setSpeakerA?enable=true
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: true
+}
+
+docs {
+  For setting Speaker A status
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies Speaker A status
+}

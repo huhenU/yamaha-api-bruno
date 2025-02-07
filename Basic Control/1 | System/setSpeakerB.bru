@@ -1,0 +1,24 @@
+meta {
+  name: setSpeakerB
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setSpeakerB?enable=true
+  body: none
+  auth: none
+}
+
+params:query {
+  enable: true
+}
+
+docs {
+  For setting Speaker B status
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | enable | boolean | yes | Specifies Speaker B status
+}

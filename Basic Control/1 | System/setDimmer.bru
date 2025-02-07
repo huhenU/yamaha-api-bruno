@@ -1,0 +1,24 @@
+meta {
+  name: setDimmer
+  type: http
+  seq: 26
+}
+
+get {
+  url: {{BaseURL}}/v1/system/setDimmer?value=3
+  body: none
+  auth: none
+}
+
+params:query {
+  value: 3
+}
+
+docs {
+  For setting FL/LED Dimmer
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | value | integer | yes | Setting Dimmer. Specifies -1 in case of auto setting Specifies 0 or more than 0 in case of manual setting. Auto setting is available only when -1 is exists in vale range under /system/getFeatures. Value Range: calculated by minimum/maximum/step values gotten via /system/getFeatures
+}

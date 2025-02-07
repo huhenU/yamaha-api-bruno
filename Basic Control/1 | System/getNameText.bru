@@ -1,0 +1,24 @@
+meta {
+  name: getNameText
+  type: http
+  seq: 30
+}
+
+get {
+  url: {{BaseURL}}/v1/system/getNameText?id=main
+  body: none
+  auth: none
+}
+
+params:query {
+  id: main
+}
+
+docs {
+  For retrieving text information of Zone, Input, Sound program. If they can be renamed, can retrieve text information renamed.
+  
+  **Request Parameters**
+  | name | type | required | description |
+  |------|--------|----------|-----------|
+  | id | string | no | Specifies ID. If no ID is specified, retrieve all information of Zone, Input, Sound program. Refer to “All ID List” in PDF for details
+}

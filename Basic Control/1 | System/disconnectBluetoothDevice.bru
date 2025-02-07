@@ -1,0 +1,17 @@
+meta {
+  name: disconnectBluetoothDevice
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{BaseURL}}/v1/system/disconnectBluetoothDevice
+  body: none
+  auth: none
+}
+
+docs {
+  For disconnecting Bluetooth (Sink) device. This API is available only when “bluetooth_tx_setting” is true under /system/getFuncStatus.
+  
+  This API response is issued immediately after disconnect request is accepted.
+}

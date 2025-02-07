@@ -1,0 +1,46 @@
+meta {
+  name: setWirelessLan
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setWirelessLan
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ssid": "AP1-2.4GHz",
+    "type": "wpa2-psk(aes)",
+    "key": "abadcafe",
+    "dhcp": false,
+    "ip_address": "192.168.2.4",
+    "subnet_mask": "255.255.255.0",
+    "default_gateway": "192.168.2.1",
+    "dns_server_1": "192.168.0.1",
+    "dns_server_2": "0.0.0.0"
+  }
+}
+
+docs {
+  For setting Wireless Network (Wi-Fi). Network connection is switched to wireless (Wi-Fi) by using this API.
+  If no parameter is specified, current parameter is used. If set parameter is incomplete, it is possible not to provide network avalability.
+  
+  **Request parameters**
+  
+  | name           | type   | required | description                                                                 |
+  |--------------|--------|----------|-----------------------------------------------------------------------------|
+  | ssid         | string | no       | Specifies access point SSID (UTF-8 within 32 bytes)                         |
+  | type         | string | no       | Specifies wireless encryption protocol. Values: "none" / "wep" / "wpa2-psk(aes)" / "mixed_mode" |
+  | key          | string | no       | Specifies encryption key (printable ASCII (0x20-0x7E) within 64 characters). This value is invalid when type "none" is specified. |
+  | dhcp         | string | no       | Specifies DHCP setting                                                      |
+  | ip_address   | string | no       | Specifies IP Address                                                        |
+  | subnet_mask  | string | no       | Specifies Subnet Mask                                                       |
+  | default_gateway | string | no    | Specifies Default Gateway                                                   |
+  | dns_server_1 | string | no       | Specifies DNS Server 1                                                      |
+  | dns_server_2 | string | no       | Specifies DNS Server 2                                                      |
+  
+  
+}

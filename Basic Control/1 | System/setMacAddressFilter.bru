@@ -1,0 +1,21 @@
+meta {
+  name: setMacAddressFilter
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setMacAddressFilter
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "filter": true,
+    "address_1": "00A0DE1BFFFA",
+    "address_2": "00A0DE1BFFFB",
+    "address_3": "00A0DE1BFFFC",
+    "address_10": "00A0DE1BFFFF"
+  }
+}

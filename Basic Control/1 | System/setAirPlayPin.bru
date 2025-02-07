@@ -1,0 +1,17 @@
+meta {
+  name: setAirPlayPin
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{BaseURL}}/v1/system/setAirPlayPin
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "pin": "abc123"
+  }
+}

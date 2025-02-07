@@ -1,0 +1,17 @@
+meta {
+  name: getBluetoothDeviceList
+  type: http
+  seq: 17
+}
+
+get {
+  url: {{BaseURL}}/v1/system/getBluetoothDeviceList
+  body: none
+  auth: none
+}
+
+docs {
+  For retrieving Bluetooth (Sink) device list. This API is available only when “bluetooth_tx_setting” is true under /system/getFuncStatus. (Otherwise returns response_code 5).
+  
+  This device list information is in the cach. If update device list information, excute /system/updateBluetoothDeviceList.
+}
